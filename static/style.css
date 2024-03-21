@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+h1 {
+    color: #333;
+}
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.label-top-margin {
+    margin-top: 50px;
+}
+form label + textarea + label {
+    margin-top: 50px;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    height: auto;
+    overflow-y: auto;
+    resize: vertical;
+}
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* Style for the form surrounding the button to remove any unwanted default styles */
+.reset-form {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+/* Custom styles for the "Refresh" button */
+.reset-button {
+    display: inline-block;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Top and bottom padding, left and right padding */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to a pointer on hover */
+    font-size: 16px; /* Larger font size */
+    margin-bottom: 50px;
+}

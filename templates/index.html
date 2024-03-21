@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CleanPrompt</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>CleanPrompt</h1>
+    <a href="/reset" class="reset-button">Refresh</a>
+    <form action="/" method="post">
+        <label for="text">Enter text:</label><br>
+        <textarea id="text" name="text" rows="5" cols="50">{{ original_text }}</textarea><br>
+        <label for="additional_words">Additional words/phrases to hide. You can skip this and come back to this later (optional, comma-separated):</label><br>
+        <textarea id="additional_words" name="additional_words" rows="5" cols="50">{{ request.form.additional_words | default('') }}</textarea><br>
+        <input type="submit" name="process_text" value="Process Text">
+    </form>
+   
+    {% if mappings %}
+        <h2>Mappings</h2>
+        <ul>
+        {% for original, placeholder in mappings.items() %}
+            <li>{{ placeholder }}: {{ original }}</li><br>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if processed_text %}
+    <h2>Processed Text</h2>
+        <textarea id="processed_text" name="processed_text" rows="5" cols="50" readonly>{{ processed_text }}</textarea><br>
+    {% endif %}
+    
+    {% if processed_text %}
+    <h2>LLM Response</h2>
+        <form method="POST" action="#revertedTextSection">
+            <input type="hidden" name="original_text" value="{{ original_text }}">
+            <input type="hidden" name="processed_text" value="{{ processed_text }}">
+            <textarea name="llm_response">{{ llm_response }}</textarea>
+            <input type="submit" name="revert_text" value="Revert Text">
+        </form>
+    {% endif %}
+    {% if reverted_text %}
+    <div id="revertedTextSection">
+    <h2>Reverted Text</h2>
+        <textarea id="reverted_text" name="reverted_text" rows="5" cols="50" readonly>{{ reverted_text }}</textarea><br>
+    </div>
+    {% endif %}
+    <script src="../static/adjustTextArea.js"></script>
+</body>
+</html>
