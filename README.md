@@ -42,4 +42,6 @@ flask run
 Open a web browser and navigate to `http://127.0.0.1:5000` to access the web interface.
 
 ## Demo
+We will anonymize the initial paragraphs from KonMari's Wikipedia page, treating the content as confidential for the sake of the demo. CleanPrompt will replace specific details like names, birthdates, book titles, and award names with placeholders. It will also prompt us to conceal additional text; we'll opt to hide mentions of "Tidying Up" and "organizing", which are strongly related to KonMari. This process allows us to engage in a discussion with LLMs without revealing private information. Here, we'll ask for a bullet-pointed summary. After receiving it, we can replace the placeholders with the original information by pasting the summary back into the terminal or web interface.
+
 ![Demo of using CleanPrompt](demo.gif)
