@@ -8,7 +8,7 @@ Anonymizes sensitive information in text prompts before sending them to LLM-chat
 - Enables deanonymization: After the user communicates with an LLM, the user can revert the text (still containing placeholders) back to its original form.
 - CLI tool and web interface.
 
-## Usage
+## Using CLI
 
 To use the CLI tool, install Spacy and download the model:
 
@@ -24,6 +24,8 @@ python cleanprompt.py
 ```
 
 Follow the instructions in the terminal to anonymize and deanonymize text.
+
+## Using Web Interface
 
 Alternatively, you can use the web app.
 After installing Spacy and the model, install flask and cryptography (to enable encryption for the data stored in Flask session cookies):
